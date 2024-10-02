@@ -10,7 +10,9 @@ for line in inputfile:
     inLine = []
     for number in valid:
         if number in line:
-            inLine.append(number)
+            count = line.count(number)
+            inLine.extend([number] * count)
+    print(inLine)
     firstPos = 9999
     lastPos = 0
     for number in inLine:
@@ -28,6 +30,7 @@ for line in inputfile:
         if line.find(number) < firstPos:
             firstPos= line.find(number)
             firstNum = valid[number]
+            
 
 
 
